@@ -13,6 +13,25 @@ from employees
 order by salary desc;
 
 --문제3
-select *
+select first_name,
+       manager_id,
+       commission_pct,
+       salary
 from employees
-where in (manager_id, commission_pct is null, salary > 3000);
+where manager_id is not null and commission_pct is null
+where salary > 3000;
+
+--문제4
+select job_id job_title,
+       salary max_salary
+from employees
+where salary >= 10000
+order by salary desc;
+
+--문제5
+select first_name,
+       salary,
+       nvl(commission_pct, 0)
+from employees
+where salary between 10000 and 14000
+order by salary asc;
