@@ -18,8 +18,7 @@ select first_name,
        commission_pct,
        salary
 from employees
-where manager_id is not null and commission_pct is null
-where salary > 3000;
+where manager_id is not null and commission_pct is null and salary > 3000;
 
 --문제4
 select job_id job_title,
@@ -35,3 +34,33 @@ select first_name,
 from employees
 where salary between 10000 and 14000
 order by salary asc;
+
+--문제6
+select first_name,
+       salary,
+       to_char( hire_date, 'YYYY-MM'),
+       department_id
+from employees
+where department_id in (10,90,100);
+
+--문제7
+select first_name, salary
+from employees
+where first_name like 'S%' OR first_name like '%s%';
+
+--문제8
+select job_id
+from employees
+order by length(job_id) desc;
+
+--문제9
+select *
+from employees;
+
+--문제10
+select first_name,
+       salary,
+       format (phone_number,'###-###-####'),
+       hire_date
+from employees
+where hire_date < '03/12/31';
