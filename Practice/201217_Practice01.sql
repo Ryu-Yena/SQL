@@ -60,7 +60,7 @@ from employees;
 --문제10
 select first_name,
        salary,
-       format (phone_number,'###-###-####'),
+       replace(phone_number,'.','-'),
        hire_date
 from employees
 where hire_date < '03/12/31';
