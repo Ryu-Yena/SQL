@@ -9,16 +9,20 @@ select max(salary) "최고임금",
 from employees;
 
 --문제3
-select to_char(max(hire_date), 'YYYY년 MM월 DD일')
+select to_char(max(hire_date), 'YYYY"년" MM"월" DD"일"')
 from employees;
 
-select *
-from employees;
+--문제4
+select avg(salary),
+       max(salary),
+       min(salary)
+from employees
+group by department_id;
 
-
-select *
-from employees;
-
+--문제5
+select avg(salary)
+from employees
+group by job_id;
 
 select *
 from employees;
