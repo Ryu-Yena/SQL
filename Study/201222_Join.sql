@@ -29,9 +29,8 @@ from employees em, departments de
 where em.department_id = de.department_id
 order by em.department_id desc;
 
-select *
-from employees
 
-
+--잘못된 사용 예
 select *
-from employees
+from employees em, locations lo
+where em.salary = lo.location_id; --우연히 숫자가 같을 뿐 아무런 연관도 없지만 숫자가 같아서 join은 가능
